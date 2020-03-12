@@ -32,12 +32,3 @@ class Simple_drawing_window3(QWidget):
         p.drawPixmap(QRect(200, 100, 320, 320), self.rabbit)
         p.end()
 
-def main():
-    app = QApplication(sys.argv)
-
-    w = Simple_drawing_window3()
-    w.show()
-
-    return app.exec_()
-
-sys.exit(main())
