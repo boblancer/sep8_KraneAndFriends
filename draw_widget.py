@@ -8,6 +8,8 @@ class Simple_drawing_window(QWidget):
         QWidget.__init__(self,None)
         self.setWindowTitle("Simple Drawing")
         self.rabbit = QPixmap("images/rabbit.png")
+        self.w = Simple_drawing_window4()
+        self.w.show()
 
         
     def paintEvent(self,e):
@@ -21,11 +23,30 @@ class Simple_drawing_window(QWidget):
         p.drawPixmap(QRect(200,100,320,320),self.rabbit)
         p.end()
 
+class Simple_drawing_window4(QWidget):
+    def __init__(self):
+        QWidget.__init__(self,None)
+        self.setWindowTitle("Simple Drawing 4")
+        self.rabbit = QPixmap("images/rabbit.png")
+
+        
+    def paintEvent(self,e):
+        p = QPainter()
+        p.begin(self)
+        p.setPen(QColor(0,0,0))
+        p.setBrush(QColor(0,127,120))
+        p.drawPolygon([
+            QPoint(120,120) , QPoint(0,50) ,QPoint(50,50), QPoint(-50,-40)
+        ])
+        p.drawPixmap(QRect(200,100,320,320),self.rabbit)
+        p.end()
+
 def main():
     app = QApplication(sys.argv)
         
     w = Simple_drawing_window()
     w.show()
+
 
     return app.exec_()
 
