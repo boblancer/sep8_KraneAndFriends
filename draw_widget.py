@@ -5,14 +5,25 @@ from PySide2.QtGui import *
 from draw_bey import *
 from draw_toon import *
 from draw_bob import *
+from draw_krane import *
+
 
 class Simple_drawing_window(QWidget):
     def __init__(self):
         QWidget.__init__(self,None)
         self.setWindowTitle("Simple Drawing")
         self.rabbit = QPixmap("images/rabbit.png")
-        self.w = Simple_drawing_window4()
-        self.w.show()
+        self.w4 = Simple_drawing_window4()
+        self.w4.show()
+
+        self.w1 = Simple_drawing_window1()
+        self.w1.show()
+
+        self.w2 = Simple_drawing_window2()
+        self.w2.show()
+
+        self.w3 = Simple_drawing_window3()
+        self.w3.show()
 
         
     def paintEvent(self,e):
